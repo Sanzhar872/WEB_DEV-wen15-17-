@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --netflix-red: #E50914;
+    --netflix-red-hover: #F40612;
+    --netflix-black: #141414;
+    --netflix-dark: #000000;
+    --text-white: #FFFFFF;
+    --text-gray: #737373;
+    --input-bg: #333333;
+    --input-border: #454545;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at top, #450909 0%, var(--netflix-dark) 100%);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px 60px;
+}
+
+.logo {
+    color: var(--netflix-red);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#hero {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.Signin-card {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 16px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    color: var(--text-white);
+}
+
+.btn-primary {
+    padding: 14px;
+    background-color: var(--netflix-red);
+    color: var(--text-white);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--netflix-red-hover);
+}
+
+.helper a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-text {
+    color: var(--text-gray);
+    font-size: 13px;
+    margin-top: 40px;
+}
