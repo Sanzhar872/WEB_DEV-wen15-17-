@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'; // Input берем из core
+import { CommonModule } from '@angular/common';
+import { Product } from '../../models/product.model'; // Импортируем твой интерфейс
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
-  templateUrl: './product-card.html',
-  styleUrl: './product-card.css',
+  standalone: true,
+  imports: [CommonModule],
+  // ПРОВЕРЬ: если файл называется product-card.component.html, пиши полное имя
+  templateUrl: './product-card.component.html', 
+  styleUrls: ['./product-card.component.css']
 })
-export class ProductCard {
-  @Input() product!: Product; // Принимаем данные от родителя
+export class ProductCardComponent {
+  @Input() product!: Product; 
   currentImgIndex: number = 0;
 
   share(platform: 'wa' | 'tg') {

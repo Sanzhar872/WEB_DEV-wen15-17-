@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ProductListComponent } from './components/product-list/product-list.components'; // Добавь этот импорт
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [ProductListComponent], // Обязательно добавь сюда!
+  templateUrl: './app.html', // Проверь, чтобы имя файла совпадало (app.html или app.component.html)
 })
-export class App {
-  protected readonly title = signal('online-store');
-}
+export class AppComponent { }

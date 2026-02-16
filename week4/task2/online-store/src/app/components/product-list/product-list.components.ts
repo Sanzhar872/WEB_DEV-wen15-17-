@@ -1,8 +1,8 @@
-import { Component } from '@angular/common';
+// БЫЛО: import { Component } from '@angular/common';
+import { Component } from '@angular/core'; // СТАЛО
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Product } from '../../models/product.model';
-
 @Component({
   selector: 'app-product-list',
   standalone: true,
