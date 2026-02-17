@@ -24,4 +24,4 @@ export class ProductCardComponent {
   changeImage(index: number) {
     this.currentImgIndex = index;
   }
-}
+} 
