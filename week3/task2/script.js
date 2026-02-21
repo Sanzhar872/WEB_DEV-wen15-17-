@@ -1,68 +1,68 @@
-// 1. Поиск основных элементов в DOM по их ID
-const inputField = document.getElementById('todo-input');
-const addButton = document.getElementById('add-button');
-const listContainer = document.getElementById('List');
-// Находим все элементы, которые уже есть в списке
-const existingItems = document.querySelectorAll('.todo-item');
+const inputField = document.getElementById("todo-input");
+const addButton = document.getElementById("add-button");
+const listContainer = document.getElementById("List");
+
+const existingItems = document.querySelectorAll(".todo-item");
+/* 
+existingItems  document.querySelectorAll(".todo-item")
+existingItems = [li, li, li] nodeList
+
+checkBox = item.quearySelector(checkbox) -> gets you access to checkbox
+
+*/
 
 existingItems.forEach(item => {
-    const checkbox = item.querySelector('.checkbox');
-    const span = item.querySelector('.todo-text');
-    const deleteBtn = item.querySelector('.btn-delete');
+    const checkBox = item.querySelector(".checkbox");
+    const span = item.querySelector(".todo-text");
+    const deleteButton = item.querySelector(".btn-delete");
 
-    // Привязываем зачеркивание
-    attachToggleLogic(checkbox, span);
-
-    // Привязываем удаление для старых кнопок
-    deleteBtn.addEventListener('click', () => {
-        item.remove();
-    });
+    attachToggleLogic(checkBox, span);
+    deleteButton.addEventListener("click", ()=>{item.remove(); });
 });
 
-// 2. Обработка события клика на кнопку "add"
-addButton.addEventListener('click', () => {
-    const taskText = inputField.value.trim();
-
-    if (taskText !== "") {
-        createTask(taskText);
-        inputField.value = ""; // Очистка поля ввода
-    } else {
-        alert("Пожалуйста, введите текст задачи.");
-    }
-});
-function attachToggleLogic(checkbox, textSpan) {
-    checkbox.addEventListener('change', () => {
-        // Используем toggle — он сам добавит класс, если его нет, и уберет, если он есть
-        textSpan.classList.toggle('strike', checkbox.checked);
+function attachToggleLogic(checkBox, textSpan){
+    checkBox.addEventListener("change", ()=>{
+        textSpan.classList.toggle('strike', checkBox.checked);// что значит classList ?
     });
 }
 
-// 3. Создание новой задачи через DOM API
-function createTask(text) {
-    const li = document.createElement('li');
-    li.className = 'todo-item';
+// Main part:
+addButton.addEventListener("click",() =>{
+    const taskText = inputField.value.trim(); //почему где-то .value а где-то textContent ?
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'checkbox';
+    if(taskText !== ""){
+        createTask(taskText);
+        inputField.value = "";
+    }else{
+        alert("enter task to do");
+    }
 
-    const span = document.createElement('span');
-    span.className = 'todo-text';
+} );
+
+function createTask(text){
+    //create elements
+    const li = document.createElement("li");
+    const checkBox = document.createElement("input");
+    const span = document.createElement("span");
+    const btn = document.createElement("button");
+
+    //confifure class and content
+    li.className = "todo-item";
+    checkBox.type = "checkbox";
+    checkBox.className = "checkbox";
+
     span.textContent = text;
+    span.className = "todo-text";
 
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'btn-delete';
-    deleteBtn.textContent = '🗑';
+    btn.textContent = "🗑";
+    btn.className = "btn-delete";
 
-    // ПРИВЯЗЫВАЕМ ЛОГИКУ К НОВОМУ ЭЛЕМЕНТУ
-    attachToggleLogic(checkbox, span);
+    attachToggleLogic(checkBox, span);
+    btn.addEventListener('click', () => { li.remove(); });
 
-    deleteBtn.addEventListener('click', () => {
-        li.remove();
-    });
-
-    li.appendChild(checkbox);
+    //create tree
+    li.appendChild(checkBox);
     li.appendChild(span);
-    li.appendChild(deleteBtn);
+    li.appendChild(btn);
     listContainer.appendChild(li);
 }

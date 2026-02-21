@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="search-products">
+    <input
+    type = "text"
+    class="search-input"
+    placeholder="search for items"
+    [(ngModel)] = "searchTerm"
+    >
+  </div>
+
+  <div class="product-grid">
+    <app-product-card *ngFor = "let item of filteredProducts" [product]="item"></app-product-card>>
+  </div>
+
+  <div *ngIf = "filteredProducts.length === 0" class="no-res-container">
+    there is no such item
+  </div>
+
+</div>

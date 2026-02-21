@@ -7,4 +7,4 @@ import { ProductListComponent } from './components/product-list/product-list.com
   imports: [ProductListComponent], // Обязательно добавь сюда!
   templateUrl: './app.html', // Проверь, чтобы имя файла совпадало (app.html или app.component.html)
 })
-export class AppComponent { } 
+export class AppComponent { }  

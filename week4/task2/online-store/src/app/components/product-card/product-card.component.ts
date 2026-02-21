@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model'; // Импортируем твой интерфейс
 
 @Component({
-  selector: 'app-product-card',
+  selector: 'app-product-card', 
   standalone: true,
   imports: [CommonModule],
-  // ПРОВЕРЬ: если файл называется product-card.component.html, пиши полное имя
   templateUrl: './product-card.component.html', 
   styleUrls: ['./product-card.component.css']
 })

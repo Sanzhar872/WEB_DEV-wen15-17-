@@ -3,14 +3,24 @@ import { Component } from '@angular/core'; // СТАЛО
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Product } from '../../models/product.model';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent], // Импортируем модуль для *ngFor и дочерний компонент
+  imports: [CommonModule, ProductCardComponent, FormsModule], // Импортируем модуль для *ngFor и дочерний компонент
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+  searchTerm: string = ''; 
+
+  get filteredProducts(){
+    return this.products.filter(product =>
+      product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
   products: Product[] = [ 
     {
       id: 1,

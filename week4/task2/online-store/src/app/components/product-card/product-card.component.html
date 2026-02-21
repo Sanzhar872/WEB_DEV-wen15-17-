@@ -6,7 +6,7 @@
     
     <div class="thumbnails">
       <img *ngFor="let img of product.images; let i = index" 
-           [src]="img" 
+           [src]="img"  
            (click)="changeImage(i)"
            [class.active]="i === currentImgIndex">
     </div>

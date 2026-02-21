@@ -1,3 +1,22 @@
-<div class="grid">
-  <app-product-card *ngFor="let item of products" [product]="item"></app-product-card>
+<div class="container">
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Поиск товаров..." 
+      class="search-input"
+    >
+  </div>
+
+  <div class="product-grid">
+    <app-product-card 
+      *ngFor="let item of filteredProducts" 
+      [product]="item">
+    </app-product-card>
+  </div>
+
+  <div *ngIf="filteredProducts.length === 0" class="no-results">
+    Товары по запросу "{{ searchTerm }}" не найдены.
+  </div>
 </div>
