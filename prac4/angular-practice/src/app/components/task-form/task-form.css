@@ -1,0 +1,39 @@
+.form-container {
+  display: flex;
+  gap: 10px; /* Расстояние между инпутом и кнопкой */
+  margin-bottom: 30px;
+}
+
+input {
+  flex: 1; /* Заставляет инпут занять всё доступное место */
+  padding: 14px 16px;
+  border: 2px solid #e1e4e8;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #0066ff; /* Синяя рамка при вводе текста */
+}
+
+button {
+  padding: 0 24px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #0052cc; /* Чуть темнеет при наведении */
+}
+
+button:active {
+  transform: scale(0.96); /* Эффект нажатия (кнопка слегка уменьшается) */
+}

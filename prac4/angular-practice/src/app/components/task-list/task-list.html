@@ -1,0 +1,12 @@
+<div class="list-container">
+
+    <ul>
+        @for(task of tasks(); track task.id) {
+            <li>
+                <span>{{task.taskName}}</span>
+                <button (click)="deleteTask(task.id)"> delete </button>
+            </li>
+        }
+    </ul>
+
+</div>

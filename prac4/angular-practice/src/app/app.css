@@ -1,0 +1,16 @@
+.todo-container {
+  max-width: 500px;
+  margin: 50px auto; /* Центрируем по горизонтали, отступ сверху 50px */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px; /* Закругленные углы */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+}
+
+h1 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 700;
+}

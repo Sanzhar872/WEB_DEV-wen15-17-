@@ -1,14 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Movie } from '../temp';
+import { TaskList } from './components/task-list/task-list';
+import { TaskForm } from './components/task-form/task-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TaskList, TaskForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly someVariable = signal('angular-practice');
-  protected readonly movie = new Movie("Inception", "Christopher Nolan", 2010);
+
 }
+ 

@@ -1,0 +1,9 @@
+<div class="form-container">
+    <input type="text" 
+    placeholder="Enter a new task" 
+    #taskInput 
+    (keyup.enter) = "addNewTask(taskInput.value, taskInput)">
+
+    <button (click) = "addNewTask(taskInput.value, taskInput)">Add Task</button>
+
+</div>
