@@ -1,0 +1,13 @@
+@if (products().length === 0) {
+  <div class="empty-state">
+    <p>В этой категории нет товаров.</p>
+  </div>
+} @else {
+  <div class="product-grid">
+    @for (product of products(); track product.id) {
+      <app-product-card 
+        [product]="product" 
+        (delete)="onDelete($event)" />
+    }
+  </div>
+}

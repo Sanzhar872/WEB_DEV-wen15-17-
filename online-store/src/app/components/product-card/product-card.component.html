@@ -1,0 +1,30 @@
+<div class="card">
+  <img [src]="product().image" class="main-image" alt="Фото товара">
+  
+  <div class="gallery">
+    @for (img of product().images; track $index) {
+      <img [src]="img" alt="Миниатюра">
+    }
+  </div>
+  
+  <h3 class="title">{{ product().name }}</h3>
+  <p class="description">{{ product().description }}</p>
+  
+  <div class="price-row">
+    <p class="price">{{ product().price }} ₸</p>
+    <span class="rating"><span class="star">⭐</span> {{ product().rating }}</span>
+  </div>
+  
+  <button class="buy-btn" (click)="likeProduct()">
+    Лайк ({{ product().likes }})
+  </button>
+
+  <div class="share-actions">
+    <button class="share-btn whatsapp" (click)="share('whatsapp')">WhatsApp</button>
+    <button class="share-btn telegram" (click)="share('telegram')">Telegram</button>
+  </div>
+
+  <button class="delete-btn" (click)="onDelete()">
+    Удалить из списка
+  </button>
+</div>
