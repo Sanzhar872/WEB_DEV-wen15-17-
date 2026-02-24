@@ -10,7 +10,7 @@ import { TaskService } from '../../services/task.service';
 })
 export class TaskForm {
   private taskService = inject(TaskService);
-
+ 
 
   addNewTask(taskName: string, Input: HTMLInputElement) {
     if (taskName.trim()) {

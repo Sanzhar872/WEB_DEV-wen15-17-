@@ -8,7 +8,7 @@ export class TaskService {
 
   public readonly tasks = this.taskSignal.asReadonly();
 
-  constructor() {
+  constructor() { 
     effect(() => {
       const tasksString = JSON.stringify(this.taskSignal());
       localStorage.setItem('my_todo_tasks', tasksString);
