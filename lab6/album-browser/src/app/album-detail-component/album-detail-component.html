@@ -1,0 +1,14 @@
+@if (album()) {
+  <h2>Album Details</h2>
+  <p>ID: {{ album()?.id }}</p>
+  <p>User ID: {{ album()?.userId }}</p>
+  
+  <input [(ngModel)]="album()!.title" placeholder="Edit title">
+  
+  <br><br>
+  <button (click)="saveTitle()">Save</button>
+  <button (click)="goBack()">Back</button>
+  <button [routerLink]="['/albums', album()?.id, 'photos']">View Photos</button>
+} @else {
+  <p>Loading album details...</p>
+}

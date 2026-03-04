@@ -1,0 +1,17 @@
+<h2>Photos of Album #{{ albumId() }}</h2>
+<button [routerLink]="['/albums', albumId()]">Back to Album</button>
+
+@if (loading()) {
+  <p>Loading photos...</p>
+} @else {
+  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+    @for (photo of photos(); track photo.id) {
+      <div style="width: 150px; border: 1px solid #eee; padding: 5px;">
+        <img [src]="photo.thumbnailUrl" [alt]="photo.title" style="width: 100%;">
+        <p style="font-size: 10px;">{{ photo.title }}</p>
+      </div>
+    } @empty {
+      <p>No photos found.</p>
+    }
+  </div>
+} 
