@@ -1,6 +1,7 @@
 // БЫЛО: import { Component } from '@angular/common';
 import { Component } from '@angular/core'; // СТАЛО
-import { CommonModule } from '@angular/common';
+import
+{ CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Product } from '../../models/product.model';
 import { FormsModule } from '@angular/forms';

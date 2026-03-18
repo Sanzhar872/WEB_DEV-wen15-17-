@@ -15,7 +15,6 @@ export class ProductListComponent {
   productDeleted = output<number>();
 
   onDelete(productId: number) {
-    // Передаем ID наверх родителю, чтобы отфильтровать главный массив
     this.productDeleted.emit(productId);
   }
-}
+} 

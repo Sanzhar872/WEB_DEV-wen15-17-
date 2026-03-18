@@ -1,0 +1,13 @@
+<h2>Blog Posts</h2>
+
+@if (isLoading()) {
+  <div class="loader">Loading posts...</div>
+} @else {
+  <div class="post-container">
+    @for (post of posts(); track post.id) {
+      <div class="post-item" [routerLink]="['/posts', post.id]">
+        {{ post.title }}
+      </div>
+    }
+  </div>
+}

@@ -2,7 +2,7 @@ import { Component, input, output } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
 
-@Component({
+@Component({ 
   selector: 'app-product-card',
   standalone: true,
   imports: [CommonModule],
@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-  // Использование нового синтаксиса (preferred)
   product = input.required<Product>();
   delete = output<number>();
 
@@ -20,10 +19,7 @@ export class ProductCardComponent {
   }
 
   onDelete() {
-    const confirmDelete = confirm(`Вы уверены, что хотите удалить ${this.product().name}?`);
-    if (confirmDelete) {
-      this.delete.emit(this.product().id);
-    }
+    this.delete.emit(this.product().id);
   }
 
   share(platform: 'whatsapp' | 'telegram') {

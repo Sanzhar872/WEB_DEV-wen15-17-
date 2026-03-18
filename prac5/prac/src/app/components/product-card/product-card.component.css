@@ -1,0 +1,193 @@
+.card {
+  background: #fff;
+  border: 1px solid #eaeaea; 
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.main-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.gallery img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  border-color: #f14635; /* Красный цвет Kaspi при наведении */
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.description {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 16px 0;
+  flex-grow: 1; /* Описание растягивается, прижимая кнопки к низу */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Ограничиваем текст до 3 строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.rating {
+  font-size: 14px;
+  color: #666;
+}
+
+.star {
+  color: #f4c150;
+}
+
+/* Кнопки */
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #f14635; /* Красный цвет Kaspi */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.buy-btn:hover {
+  background-color: #d83d2e;
+}
+
+.share-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.share-btn {
+  flex: 1; /* Кнопки делят ширину пополам */
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.whatsapp { background-color: #25d366; }
+.telegram { background-color: #0088cc; }
+.whatsapp:hover { background-color: #20bd5a; }
+.telegram:hover { background-color: #0077b5; }
+
+.delete-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  color: #999;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.delete-btn:hover {
+  background: #fff0f0;
+  color: #f14635;
+  border-color: #f14635;
+}
+
+/* --- Стили для корзины --- */
+.cart-controls {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.quantity-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity-controls button:hover {
+  background: #f0f0f0;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #27ae60; /* Зеленый цвет */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #219653;
+}

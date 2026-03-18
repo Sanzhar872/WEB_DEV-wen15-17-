@@ -1,0 +1,31 @@
+<header>
+  <div class="header-top">
+    <h1>Мой Магазин</h1>
+    <span class="cart-badge">🛒 Корзина ({{ cartTotal() }} шт.)</span>
+  </div>
+
+
+  <nav class="category-tabs">
+    @for (category of categories; track category.id) {
+      <button 
+        [class.active]="selectedCategory?.id === category.id"
+        (click)="selectCategory(category)">
+        {{ category.name }}
+      </button>
+    }
+  </nav>
+</header>
+  
+<main>
+  @if (!selectedCategory) {
+    <div class="welcome-message">
+      <h2>Добро пожаловать! Пожалуйста, выберите категорию выше.</h2>
+    </div>
+  } @else {
+    <h2>{{ selectedCategory.name }}</h2>
+    <app-product-list 
+      [products]="displayedProducts"
+      (productDeleted)="handleProductDelete($event)">
+    </app-product-list>
+  }
+</main>    
