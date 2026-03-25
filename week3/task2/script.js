@@ -28,7 +28,7 @@ function attachToggleLogic(checkBox, textSpan){
 
 // Main part:
 addButton.addEventListener("click",() =>{
-    const taskText = inputField.value.trim(); //почему где-то .value а где-то textContent ?
+    const taskText = inputField.value.trim(); 
 
     if(taskText !== ""){
         createTask(taskText);
