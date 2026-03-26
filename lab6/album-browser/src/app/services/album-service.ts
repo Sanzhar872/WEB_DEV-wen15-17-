@@ -7,7 +7,7 @@ import { Photo } from '../models/photo.model';
 @Injectable({
   providedIn: 'root'
 })
-export class AlbumService {
+export class AlbumService { 
   private baseUrl = 'https://jsonplaceholder.typicode.com';
   
   // Вместо конструктора используем это:
